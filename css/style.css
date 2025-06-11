@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    align-content: center;
+    align-items:center;
+    background-color: #bceeff;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#titulo{
+    color: #004173;
+    font-size: 7vw;
+    margin-top: 10vh;
+}
+#input-container{
+    margin-top: 5vh;
+    text-align: center;
+}
+#inp-Gif{
+    border-radius: 10px;
+    height: 5vh;
+    padding: .3vw;
+    width: 15vw;
+}
+
+#btn-buscar{
+    background-color: #004173;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    padding: .5vw;
+}
+#btn-lupa{
+    display: none;
+}
+#respuesta{
+    margin-top: 5vh;
+    text-align: center;
+}
+.gif{
+    background-color: #53d4ff;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 60);
+    margin-top: 5vh;
+    padding: 3vw;
+}
+.nombre{
+    font-size: 1vw;
+    font-weight: bold;
+    color: #004173;
+    margin-bottom: 1vw;
+}

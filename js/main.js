@@ -2,10 +2,11 @@ window.onload = (e) => {
     console.log('JS is in tha house!');
 
     const btnBuscar = document.querySelector('#btn-buscar');
+    const btnLupa = document.querySelector('#btn-lupa');
     const divRespuesta = document.querySelector('#respuesta');
+    const inpBusqueda = document.querySelector('#inp-Gif');
 
-    btnBuscar.addEventListener('click', event => {
-        const inpBusqueda = document.querySelector('#inp-Gif');
+    function buscarGIF(){
         const busqueda = inpBusqueda.value.trim();
         const apiKey = "uKPmfJ0DgDLyhoWpdruIY4sLv9uiCbPq";
 
@@ -13,8 +14,7 @@ window.onload = (e) => {
             alert('Ingrese una palabra para empezar a buscar');
         }
         else {
-            
-            fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips`)
+            fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`)
                 .then((response) => {
                     return response.json();
                 })
@@ -27,7 +27,7 @@ window.onload = (e) => {
                     console.error('Hubo un error:', error);
                 });
         }
-    });
+    };
 
     function insertarGif(gifs){
         divRespuesta.innerHTML = "";
@@ -37,11 +37,20 @@ window.onload = (e) => {
             console.log(gif.url);
 
             const gifHTML = `<div class="gif">
-                    <p>${gif.title}</p>
-                    <img src="${gif.images.original.url}" alt="${gif.title}">
+                    <p class="nombre">${gif.title}</p>
+                    <img class="imgGIF" src="${gif.images.original.url}" alt="${gif.title}">
                 </div>`;
             divRespuesta.innerHTML += gifHTML;
         });
     }
+
+    btnBuscar.addEventListener('click', buscarGIF);
+    btnLupa.addEventListener('click', buscarGIF);
+    inpBusqueda.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            buscarGIF();
+        }
+    });
 };
 

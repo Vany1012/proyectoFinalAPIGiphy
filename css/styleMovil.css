@@ -1,0 +1,14 @@
+@media (max-width: 480px){
+    .imgGIF{
+        width: 40vw;
+    }
+    #btn-lupa{
+        background-color: white;
+        border-radius: 100px;
+        display: inline;
+        padding: .5vw;
+    }
+    #btn-buscar{
+        display: none;
+    }
+}

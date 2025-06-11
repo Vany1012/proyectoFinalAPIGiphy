@@ -1,0 +1,14 @@
+@media (max-width: 768px){
+    .imgGIF{
+        width: 30vw;
+    }
+    #respuesta{
+    width: 70vw;
+    }
+    #titulo{
+    font-size: 10vw;
+    }
+    #inp-Gif{
+        width: 25vw;
+    }
+}
